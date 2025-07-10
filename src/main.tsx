@@ -15,6 +15,7 @@ import { MountPoint } from './shared/utilities/sync-ui.ts';
 
 import 'react-toastify/dist/ReactToastify.css';
 import './tailwind.css';
+import { App } from './app.tsx';
 
 initLocaleForDayJs();
 const localeText: Partial<PickersLocaleText<Dayjs>> = {
@@ -34,12 +35,12 @@ const queryClient = new QueryClient({
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <QueryClientProvider client={queryClient}>
     <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale='vi' localeText={localeText}>
-        <ThemeRegistry>
-          {/* <App /> */}
-          <CssBaseline />
-          <ToastContainer autoClose={4000} hideProgressBar limit={5} />
-          <MountPoint />
-        </ThemeRegistry>
+      <ThemeRegistry>
+        <App />
+        <CssBaseline />
+        <ToastContainer autoClose={4000} hideProgressBar limit={5} />
+        <MountPoint />
+      </ThemeRegistry>
     </LocalizationProvider>
   </QueryClientProvider>
 );

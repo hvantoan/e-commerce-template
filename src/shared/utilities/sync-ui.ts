@@ -1,6 +1,6 @@
 import { createConfirmationCreater, createMountPoint, createReactTreeMounter } from 'react-confirm';
+import confirmDialog from '../components/confirm-dialog';
 
-import confirmDialog from '@/shared/components/confirm-dialog';
 
 const mounter = createReactTreeMounter();
 export const MountPoint = createMountPoint(mounter);

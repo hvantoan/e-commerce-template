@@ -46,11 +46,8 @@ export const MuiOutlinedInput: Components<CssVarsTheme>['MuiOutlinedInput'] = {
     notched: false
   },
   styleOverrides: {
-    root: ({ theme, ownerState }) => {
+    root: ({ theme }) => {
       return {
-        ...((ownerState.ownerState as any).label && {
-          marginTop: '0.9rem !important'
-        }),
         backgroundColor: theme.palette.background.paper,
         '&.Mui-focused': {
           '& .MuiOutlinedInput-notchedOutline': {
@@ -69,15 +66,10 @@ export const MuiOutlinedInput: Components<CssVarsTheme>['MuiOutlinedInput'] = {
         }
       };
     },
-    notchedOutline: ({ theme, ownerState }) => {
+    notchedOutline: ({ theme }) => {
       return {
         borderColor: theme.palette.text.disabled,
         transition: 'border-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
-        '& legend span': {
-          ...(ownerState?.label && {
-            display: 'none'
-          })
-        }
       };
     }
   }
